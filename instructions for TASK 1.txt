@@ -1,0 +1,98 @@
+BASIC NETWORK SNIFFER — REQUIREMENTS AND USAGE
+
+1. PROJECT OVERVIEW
+
+This project is a basic Python network sniffer developed using the Scapy library. It captures 10 network packets and displays source and destination IP addresses, protocol numbers, TCP/UDP port numbers, and available raw payload data.
+
+2. REQUIREMENTS
+
+* Python 3
+* Scapy library
+* Appropriate permissions for packet capture
+* Npcap on Windows, if required
+* Network traffic to capture
+
+3. INSTALLATION
+
+Install Scapy using the terminal or command prompt:
+
+`python -m pip install scapy`
+
+4. HOW TO USE THE PROGRAM
+
+Step 1: Save your Python code as `network_sniffer.py`.
+
+Step 2: Open a terminal in the folder containing the file.
+
+Step 3: Run the program:
+
+`python network_sniffer.py`
+
+On Linux, you may need to run:
+
+`sudo python3 network_sniffer.py`
+
+Step 4: The program starts capturing packets and displays their information.
+
+Step 5: The program stops automatically after capturing 10 packets. It may wait if there is insufficient network traffic.
+
+5. INFORMATION DISPLAYED
+
+* Source IP: The sender's IPv4 address.
+* Destination IP: The receiver's IPv4 address.
+* Protocol: The numeric IP protocol identifier.
+* Source Port: The TCP or UDP source port.
+* Destination Port: The TCP or UDP destination port.
+* Payload: Available raw packet data.
+
+Protocol number 6 represents TCP, and protocol number 17 represents UDP.
+
+6. EXAMPLE OUTPUT
+
+Starting packet capture...
+
+--- Packet Captured ---
+Source IP: 192.168.1.5
+Destination IP: 142.250.183.14
+Protocol: 6
+Source Port: 52341
+Destination Port: 443
+
+Note: This is illustrative output, not an actual capture result.
+
+7. HOW THE PROGRAM WORKS
+
+8. Imports the sniff function from Scapy.
+
+9. Defines a callback function to process captured packets.
+
+10. Checks for an IP layer and displays the addresses and protocol number.
+
+11. Checks for TCP or UDP and displays port numbers.
+
+12. Displays raw payload data when available.
+
+13. Captures 10 packets using the sniff function.
+
+14. TASK REQUIREMENTS COVERED
+
+Task 1: Basic Network Sniffer
+
+* Capture network traffic packets.
+* Analyze captured packets.
+* Learn basic network protocols and data flow.
+* Use Scapy for packet capturing.
+* Display source/destination IPs, protocols, and available payloads.
+
+The program covers the core requirements of the task.
+
+9. LIMITATIONS
+
+* The current code handles IPv4, not IPv6, for IP address display.
+* Payload data may be encrypted or unreadable.
+* Packet capture may require administrator or root permissions.
+* The program is intended for basic educational use.
+
+10. SAFETY AND PRIVACY
+
+Only capture traffic on networks and devices you own or have explicit permission to monitor. Packet payloads may contain sensitive information.
